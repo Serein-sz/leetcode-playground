@@ -12,26 +12,21 @@ public class Main {
     }
 
     public static int firstDayBeenInAllRooms(int[] nextVisit) {
-        int n = nextVisit.length;
-        int[] rooms = Arrays.copyOf(nextVisit, n);
-        Arrays.fill(rooms, 0);
-        int visitRoom = 0;
-        int i = 0;
-        int day = 0;
-        for (;;) {
-            if (rooms[i] == 0) {
-                visitRoom += 1;
+        int mod = 1000000007;
+        int len = nextVisit.length;
+        int[] dp = new int[len];
+        //初始化原地待一天 + 访问下一个房间一天
+        dp[0] = 2;
+        for (int i = 1; i < len; i++) {
+            int to = nextVisit[i];
+            dp[i] = 2 + dp[i - 1];
+            if (to != 0) {
+                //避免负数
+                dp[i] = (dp[i] - dp[to - 1] + mod) % mod;
             }
-            if (visitRoom == n) {
-                return day % 1000000007;
-            }
-            rooms[i] += 1;
-            if (rooms[i] % 2 == 1) {
-                i = nextVisit[i];
-            } else {
-                i = (i + 1) % n;
-            }
-            day++;
+
+            dp[i] = (dp[i] + dp[i - 1]) % mod;
         }
+        return dp[len - 2];
     }
 }
