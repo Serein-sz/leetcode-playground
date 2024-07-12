@@ -1,7 +1,5 @@
 package L202407.L1997;
 
-import java.util.Arrays;
-
 /**
  * @author 王强
  * @since 2024/7/11
@@ -24,7 +22,6 @@ public class Main {
                 //避免负数
                 dp[i] = (dp[i] - dp[to - 1] + mod) % mod;
             }
-
             dp[i] = (dp[i] + dp[i - 1]) % mod;
         }
         return dp[len - 2];
