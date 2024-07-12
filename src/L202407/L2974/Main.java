@@ -2,6 +2,8 @@ package L202407.L2974;
 
 import java.util.Arrays;
 
+import static utils.ArrayUtils.println;
+
 /**
  * @author 王强
  * @since 2024/7/12
@@ -9,7 +11,7 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-
+        println(numberGame(new int[]{5, 4, 2, 3}));
     }
 
     public static int[] numberGame(int[] nums) {
