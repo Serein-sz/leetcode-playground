@@ -12,7 +12,7 @@ public class ArrayUtils {
     private ArrayUtils() {}
 
     public static void println(int[] array) {
-        System.out.println(Arrays.stream(array).mapToObj(String::valueOf).collect(Collectors.joining(", ")));
+        System.out.println("[" + Arrays.stream(array).mapToObj(String::valueOf).collect(Collectors.joining(", ")) + "]");
     }
 
 }

@@ -1,10 +1,6 @@
-package L2956;
+package L202407.L2956;
 
 import utils.ArrayUtils;
-
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 /**
  * @author 王强
