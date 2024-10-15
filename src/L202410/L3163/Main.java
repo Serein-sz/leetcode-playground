@@ -10,6 +10,7 @@ import java.util.Map;
  * @since 2024/10/11
  */
 public class Main {
+
     public static void main(String[] args) throws InterruptedException {
         BenchmarkUtils.execute(10, () -> {
             System.out.println(new Main().numberOfPairs(new int[]{1, 3, 4}, new int[]{1, 3, 4}, 1));
