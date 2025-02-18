@@ -4,7 +4,6 @@ import java.beans.Introspector;
 import java.lang.invoke.SerializedLambda;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.concurrent.locks.LockSupport;
 
 /**
  * @author 王强
@@ -13,8 +12,13 @@ import java.util.concurrent.locks.LockSupport;
 public class Main {
 
     public static void main(String[] args) {
-        String fieldName = getFieldName(Position::getColumnIndex);
-        System.out.println("fieldName = " + fieldName);
+        int total = 666;
+        int batchSize = 50;
+        for (int i = 0; i < (total + batchSize - 1) / batchSize; i++) {
+            int start = i * batchSize;
+            int end = Math.min(total, (i + 1) * batchSize);
+            System.out.println("start = " + start + ", end = " + end);
+        }
     }
 
     public static <T, R> String getFieldName(IGetter<T, R> getter) {
