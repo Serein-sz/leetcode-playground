@@ -12,9 +12,9 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
         RangeFreqQuery rangeFreqQuery = new RangeFreqQuery(new int[]{12, 33, 4, 56, 22, 2, 34, 33, 22, 12, 34, 56});
-        // int result = rangeFreqQuery.query(1, 2, 4);
-        // System.out.println("result = " + result);
-        int result = rangeFreqQuery.query(0, 11, 33);
+        int result = rangeFreqQuery.query(1, 2, 4);
+        System.out.println("result = " + result);
+        result = rangeFreqQuery.query(0, 11, 33);
         System.out.println("result = " + result);
     }
 }
