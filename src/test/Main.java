@@ -12,6 +12,7 @@ import java.lang.reflect.Method;
 public class Main {
 
     public static void main(String[] args) {
+        System.out.println("Integer.MAX_VALUE = " + Integer.MAX_VALUE);
         int total = 666;
         int batchSize = 50;
         for (int i = 0; i < (total + batchSize - 1) / batchSize; i++) {

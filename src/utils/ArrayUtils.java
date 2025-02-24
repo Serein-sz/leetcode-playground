@@ -15,4 +15,8 @@ public class ArrayUtils {
         System.out.println("[" + Arrays.stream(array).mapToObj(String::valueOf).collect(Collectors.joining(", ")) + "]");
     }
 
+    public static void println(String[] array) {
+        System.out.println("[" + String.join(", ", array) + "]");
+    }
+
 }
